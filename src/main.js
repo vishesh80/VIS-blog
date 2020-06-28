@@ -15,18 +15,21 @@ import {getProfile,clearProfileOnLogout} from './redux/actions/profileActions';
 ReactDOM.render(<Provider store={store}><App/></Provider>,document.getElementById("root"));
 
 
-auth.onAuthStateChanged(async (user) => {
+auth.onAuthStateChanged((user) => {
 
   if (user){
+
+    let modal = document.getElementById('modal');
+    modal.classList.toggle('modal');
     
     // Redux Actions
-
      getAll(user.uid)
      .then(action => {
         store.dispatch(action);
         history.push("/dashboard");
      })
-     .catch(err => alert(err));
+     .catch(err => alert(err))
+     .finally(() => modal.classList.toggle('modal'));
 
 
     getProfile(auth.currentUser)

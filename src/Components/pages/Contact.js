@@ -17,6 +17,8 @@ const Contact = (p) => (
 
 function onSubmit()
 {
+    let modal = document.getElementById('modal');
+
     let contact = {
       name: document.getElementById('contact_name').value.trim(),
       email: document.getElementById('contact_email').value.trim(),
@@ -30,7 +32,7 @@ function onSubmit()
       if(!(contact.name && contact.email && /[a-zA-Z]{2,50}/.test(contact.name) && emailRegex.test(contact.email)))
       return alert('Enter the Valid Information.');
 
-  
+    modal.classList.toggle('modal');
     fetch('/api/saveContact',{
       method:"POST",
       body: JSON.stringify(contact),
@@ -48,10 +50,10 @@ function onSubmit()
     })
     .finally(() => {
 
-        document.getElementById('contact_name').value = ''
-        document.getElementById('contact_email').value= ''
-        document.getElementById('contact_desc').value= ''
-        
+        document.getElementById('contact_name').value = '';
+        document.getElementById('contact_email').value= '';
+        document.getElementById('contact_desc').value= '';
+        modal.classList.toggle('modal');
     });
 }
 

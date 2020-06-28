@@ -23,6 +23,9 @@ function onSubmit(blog,dispatch)
 {
     blog.uid =  auth.currentUser.uid;
 
+    let modal = document.getElementById('modal');
+    modal.classList.toggle('modal');
+
     // Redux Action
     createBlog(blog)
     .then(action => {
@@ -30,7 +33,8 @@ function onSubmit(blog,dispatch)
             dispatch(action);
             history.push('/dashboard');
     })
-    .catch(err => alert(err));
+    .catch(err => alert(err))
+    .finally(() => modal.classList.toggle('modal'));
     
 }
 

@@ -31,7 +31,10 @@ const displayBlog = p => {
                 })
                 .then(json => vchange(json.views))
                 .catch(err => console.error(err, err.message));
-        },15000)
+        },15000);
+
+        let modal = document.getElementById('modal');
+        modal.classList.toggle('modal');
     
         if(blog.bannerid) fetch('/api/Banner/'+blog.bannerid)
                             .then(res => {
@@ -51,7 +54,8 @@ const displayBlog = p => {
             .catch(err => {
                 console.error(err, err.message);
                 change({ ...state, photoURL: './images/user.png', name:'Anonymous'});
-            });
+            })
+            .finally(() => modal.classList.toggle('modal'));
 
             
 

@@ -14,10 +14,17 @@ const Blog = ({blog,dispatch}) => (
             <div>
                 <button className='editBtn' onClick={e => history.push('/editBlog/' + blog._id)} >EDIT</button>
                 <button className='deleteBlogBtn'
-                    onClick={e => deleteBlog(auth.currentUser.uid, blog._id, blog.bannerid)
-                        .then(action => dispatch(action))
-                        .catch(err => alert(err))
-                    }>X</button>
+                        onClick={e => {
+
+                            let modal = document.getElementById('modal');
+                            modal.classList.toggle('modal');
+                        
+                            deleteBlog(auth.currentUser.uid, blog._id, blog.bannerid)
+                            .then(action => dispatch(action))
+                            .catch(err => alert(err))
+                            .finally(() => modal.classList.toggle('modal'));
+
+                        }}>X</button>
             </div>
             <section><h2>{parseInt(blog.views)}</h2><img src="./images/views.png" alt=""></img></section>
         </aside>

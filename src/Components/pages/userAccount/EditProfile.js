@@ -54,18 +54,25 @@ const EditProfile = ({dispatch,profile,history}) => {
 
                                   {/*Redux Action */}
             <button  className='saveBtn'
-                     onClick={e => (isValid(state))?editProfile(state)
+                     onClick={e=>
+                        (isValid(state))
+                        ?
+                        editProfile(state,document.getElementById('modal').classList.toggle('modal'))
                                   .then(action => {
                                       
                                     dispatch(action);
                                     history.push('/dashboard');
                                     
                                   })
-                                  .catch(err => console.error(err,err.message)):alert('Please fill all the Form feilds with valid information.And Bio. should contain atleast 15 words.')}
-                                  >Save</button>
+                                  .catch(err => console.error(err,err.message))
+                                  .finally(() => document.getElementById('modal').classList.toggle('modal'))
+                        :
+                        alert('Please fill all the Form feilds with valid information.And Bio. should contain atleast 15 words.')
+                    }
+                    >Save</button>
 
                 <button className='clearBtn'
-                        onClick={ e => clearProfile()
+                        onClick={e => clearProfile(document.getElementById('modal').classList.toggle('modal'))
                                         .then(action  => dispatch(action))
                                         .catch(err => {
                                             
@@ -73,7 +80,12 @@ const EditProfile = ({dispatch,profile,history}) => {
                                             alert('Failed to clear changes\nTry Later.');
 
                                         })
-                                        .finally(() => history.push('/dashboard'))
+                                        .finally(() => {
+
+                                            document.getElementById('modal').classList.toggle('modal')
+                                            history.push('/dashboard');
+                                            
+                                        })
                                         }>Clear Profile</button>
 
             <input type="file" id="imageFile" style={{ display: "none" }}></input>

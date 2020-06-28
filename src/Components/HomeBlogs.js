@@ -91,7 +91,7 @@ let showMore = (array,dispatch,state,e) => {
     let recentBtn = document.getElementById('recentBtn');
     let popularBtn = document.getElementById('popularBtn');
 
-    load.classList.toggle('noNone');
+    if (state === 'recent' || state === 'popular') load.classList.toggle('noNone');
     
     if(state === 'recent')
     // Redux Action 
@@ -121,8 +121,6 @@ let showMore = (array,dispatch,state,e) => {
 
     if(state === 'search')
     {
-        load.classList.toggle('noNone');
-
         if (recentBtn.classList.toggle('active_button')) recentBtn.classList.toggle('active_button');
         if (popularBtn.classList.toggle('active_button')) popularBtn.classList.toggle('active_button');
     }
@@ -131,6 +129,9 @@ let showMore = (array,dispatch,state,e) => {
 
 function search(dispatch)
 {
+
+    let load = document.getElementById('load');
+    load.classList.toggle('noNone');
      
     //Redux Action
     getSearched(document.getElementById('search_text').value)
@@ -140,7 +141,8 @@ function search(dispatch)
         document.getElementById('showMoreBtn').disabled = true;
 
     })
-    .catch(err => console.error(err,err.message));
+    .catch(err => console.error(err,err.message))
+    .finally(() => load.classList.toggle('noNone'));
     
 }
 

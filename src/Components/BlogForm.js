@@ -6,15 +6,15 @@ const form = p =>
     
     let [state,change] = useState({title:"",content:"",banner:"",bchanged: false});
 
-    
 
     if(p.defaultt)
     useEffect(() => {
 
-        let url = (p.defaultt.bannerid) ? ('/api/Banner/' + p.defaultt.bannerid) : '/api/Banner/empty';
-
-        
+            let url = (p.defaultt.bannerid) ? ('/api/Banner/' + p.defaultt.bannerid) : '/api/Banner/empty';
             change({ ...p.defaultt, banner: "",bchanged:false});
+
+            let modal = document.getElementById('modal');
+            modal.classList.toggle('modal');
             
             fetch(url)
                 .then(res => {
@@ -27,10 +27,13 @@ const form = p =>
                     banner:json.banner,
                     bchanged:false
                 }))
-                .catch(err => console.error(err.message));
+                .catch(err => console.error(err.message))
+                .finally(() => modal.classList.toggle('modal'));
 
     },[]);
     
+
+
 
 
     return (

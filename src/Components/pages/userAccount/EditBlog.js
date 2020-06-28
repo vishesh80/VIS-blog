@@ -19,14 +19,17 @@ function onSubmit(edit,dispatch)
 {
     edit.uid = auth.currentUser.uid;
 
+    let modal = document.getElementById('modal');
+    modal.classList.toggle('modal');
+
     editBlog(edit)
     .then(action => {
         
         dispatch(action);
         history.push('/dashboard');
     })
-    .catch(err => alert(err.message));
-
+    .catch(err => alert(err.message))
+    .finally(() => modal.classList.toggle('modal'));
 }
 
 function mapS2P(state,props)

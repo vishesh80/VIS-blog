@@ -1,0 +1,89 @@
+@import '../modules/variables.scss';
+
+.aboutCont
+{
+    width: 100%;
+    margin-top: 4em;
+
+    main
+    {
+        width: 80%;
+        margin: auto;
+
+        line-height: 150%;
+
+        span
+        {
+            font-size: 3rem;
+            font-family: 'Dancing Script',sans-serif;
+            color: $lightgreen;
+        }
+    }
+
+
+    aside
+    {
+        line-height: 150%;
+
+        width: 70%;
+        margin-top: 3em;
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 1.5em;
+
+        display: flex;
+
+        div
+        {
+            width: 35%;
+            padding: 1em;
+            display: flex;
+            justify-content: space-evenly;
+            
+
+            img
+            {
+                object-fit: cover;
+                max-width: 100%;
+                max-height: 60%;
+            }
+
+        }
+
+        section
+        {
+            width: 65%;
+
+                h2
+                {
+                    color: $lightgreen;
+                }
+            
+        }
+
+    
+    }
+}
+
+
+@media (max-width: 700px)
+{
+    .aboutCont
+    {
+        aside
+        {
+            width: 95%;
+
+            div
+            {
+                padding: 1em .4em;
+
+                img
+                {
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

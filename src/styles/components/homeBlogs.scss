@@ -1,0 +1,183 @@
+@import '../modules/variables.scss';
+
+.homeBlogsCont
+{
+    width: 100%;
+    
+
+    /*--------------------NAV---------------------------------------*/
+    nav
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 75%;
+        min-width: 390px;
+        margin: auto;
+
+
+
+
+
+        .search
+        {
+            width: 50%;
+            padding: 1.2em 0;
+            min-width: 320px;
+            
+
+            input
+            {
+                width: 70%;
+                font-size: 1.3rem;
+                padding: .2em .8em;
+                color: grey;
+
+                border: none;
+                border-bottom: solid $lightgreen 2px;
+                outline: none;
+            }
+
+            button
+            {
+                width: 30%;
+                font-size: 1.3rem;
+                padding: .2em .8em;
+                border: solid $lightgreen 2px;
+                background-color: white;
+                color: $lightgreen;
+
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+
+
+
+
+        .filters
+        {
+            width: 30%;
+            padding: 1.2em 0;
+            min-width: 190px;
+            
+
+            button
+            {
+                width: 50%;
+                font-size: 1.3rem;
+                padding: .2em .8em;
+
+                border: none;
+                border-bottom: dashed $lightgreen 2px;
+                background-color: white;
+                color: $lightgreen;
+
+                cursor: pointer;
+                outline: none;
+            }
+
+            .active_button
+            {
+                border: solid $lightgreen 2px;
+            }
+            
+        }
+
+
+    }
+
+
+    /*-------------------HomeBlogList------------------------------*/
+
+    .homeBlogList
+    {
+        width: 75%;
+        margin: auto;
+
+        /*-----------List item----------------*/
+        div
+        {
+            margin: 3.5em 0;
+
+            a
+            {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: $lightgreen;
+                cursor: pointer;
+
+                &:hover
+                {
+                    color: $green;
+                    
+                }
+            }
+
+        }
+    }
+
+    /*----------------Show more button--------------------*/
+    & > button
+    {
+                display: block;
+                width: 50%;
+                font-size: 1.3rem;
+                
+                padding: .2em .8em;
+                margin: auto;
+
+                border: solid $lightgreen 1px;
+                background-color: white;
+                color: $lightgreen;
+
+                cursor: pointer;
+                outline: none;
+
+                &:hover
+                {
+                    background-color: $lightgreen;
+                    color: white;
+                }
+    }
+
+
+}// HomeBlogCont ends
+
+
+
+@media (max-width: 600px)
+{
+    .homeBlogsCont
+    {
+        /*-----------------------NAV-----------------------*/
+
+        nav
+        {
+            width: 90%;
+            flex-direction: column;
+
+            .search
+            {
+                width: 100%;
+            }
+
+
+            .filters
+            {
+                width: 100%;
+            }
+
+        }
+
+        /*------------------HomeBlogList-------------------------------*/
+
+        .homeBlogList
+        {
+            width: 90%;
+        }
+
+    }
+}

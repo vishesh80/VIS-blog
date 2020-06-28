@@ -1,0 +1,96 @@
+@import '../modules/variables';
+
+.header
+{
+    background-image: url('/images/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    text-align: center;
+
+
+
+    h1
+    {
+        font-family: 'Dancing Script',sans-serif;
+        font-size: 2.5rem;
+        color: $lightgreen;
+    }
+
+
+
+
+
+    nav
+    {
+        a
+        {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 500;
+
+            margin: 0 1.2em;
+
+            &:hover
+            {
+                border-bottom: solid $lightgreen 2px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    .header_content
+    {
+        padding: 6em 0;
+
+        h2
+        {
+            font-size: 3.9rem;
+            margin: .05em 0;
+        }
+
+        p
+        {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 0;
+
+           color: $lightgreen;
+        }
+
+        a
+        {
+            text-decoration: none;
+            //border: solid $lightgreen 2px;
+            padding: .4em 2.5em;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: $lightgreen;
+            box-shadow: 0 0 3px 1px $lightgreen;
+
+            display: inline-block;
+            margin-top: 3em;
+
+            &:hover
+            {
+                box-shadow: 0 0 12px 3px $lightgreen;
+                color: white;
+                background-color: $lightgreen;
+            }
+        }
+    }
+
+
+
+    
+}

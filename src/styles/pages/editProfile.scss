@@ -1,0 +1,78 @@
+@import '../modules/variables.scss';
+
+.profileCont
+{
+    width: 100%;
+    
+    & > div
+    {
+        
+        width: 90%;
+        max-width: 500px;
+        margin: 5em auto;
+        padding: 0;
+        padding-top: .3em;
+
+        box-shadow: -3px -3px 6px whitesmoke, 3px 3px 10px rgb(143, 143, 143);
+
+        input
+        {
+            font-size: 1.2rem;
+            padding: .5em 1em;
+            width: 100%;
+
+            border: none;
+            outline: none;
+        }
+
+        button
+        {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: .5em 1em;
+            color: white;
+
+             border: none;
+             outline: none;
+
+             cursor: pointer;
+        }
+        .uploadBtn
+        {
+            background-color: $blue;
+        }
+        .clearBtn
+        {
+            background-color: $red;
+        }
+        .saveBtn
+        {
+            background-color: $lightgreen;
+        }
+
+        section
+        {
+            width: 100%;
+            display: inline-block;
+
+            img
+            {
+                max-width: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                overflow: hidden;
+            }
+        }
+
+        textarea
+        {
+            width: 100%;
+            padding: .5em 1.2em;
+            font-family: 'Open Sans',sans-serif;
+            font-size: 1.1rem;
+             border: none;
+             outline: none;
+        }
+    }
+}

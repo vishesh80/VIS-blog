@@ -1,0 +1,147 @@
+@import '../modules/variables.scss';
+
+.displayBlogCont
+{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+
+
+    article
+    {
+
+        h1
+        {
+            font-size: 2.4rem;
+            margin-bottom: .4em;
+        }
+
+        & > img
+        {
+            display: inline-block;
+            margin-top: 1em;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &>p
+        {
+            word-break: break-all;
+            margin-top: 2.5em;
+        }
+
+        & > div
+        {
+            margin-top: 3rem;
+        }
+
+        section
+        {
+            display: flex;
+            align-items: center;
+            height: 1.2rem;
+            padding: 0 .4em;
+
+            p
+            {
+                font-size: 1.2rem;
+                padding-right: .2em;
+            }
+
+            .viewCount
+            {
+                margin-left: auto;
+                font-weight: 700;
+                font-weight: 1.3rem;
+            }
+
+            img
+            {
+                display: inline-block;
+                max-height: 130%;
+            }
+        }
+
+    }
+
+
+
+
+
+    aside
+    {
+        width: 100%;
+        max-width: 800px;
+        margin: 5em auto;
+        
+        h1
+        {
+            border-bottom: solid grey 3px;
+        }
+
+        & > div
+        {
+            display: flex;
+
+            &>div
+            {
+                width: 35%;
+                
+                img
+                {
+                    max-width: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    
+                    overflow: hidden;
+                }
+            }
+
+            section
+            {
+                width: 65%;
+                padding: 0 .8em;
+
+                text-align: center;
+                
+            }
+        }
+    }
+
+
+
+}
+
+
+@media (max-width: 600px)
+{
+    .displayBlogCont
+    {
+
+        aside
+        {
+
+            & > div
+            {
+                display: block;
+
+                & > div
+                {
+                    width:80%;
+                    margin: auto;
+                }
+
+                section
+                {
+                     width: 100%;
+                }
+            }
+            
+        }
+
+
+    }
+   
+}

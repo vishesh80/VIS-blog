@@ -1,0 +1,204 @@
+@import '../modules/variables.scss';
+
+.dashboardCont
+{
+    width: 100%;
+    min-height: 100vh;
+    padding: 1.5em 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    background-color: $offWhite;
+
+    .profile
+    {
+        width: 30%;
+        padding: 1em 1em;
+        text-align: center;
+
+        box-shadow: $neuro;
+        background-color: $offWhite;
+
+        border-radius: 14px;
+        overflow: hidden;
+
+        h2,h4,h5
+        {
+            margin: .3em auto;
+        }
+
+        img
+        {
+            max-width: 100%;
+            width: 100%;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        section p
+        {
+            word-wrap: break-word;
+        }
+    }
+
+
+    & > main
+    {
+        width: 60%;
+        max-width: 786px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        nav
+        {
+            padding: 0;
+            box-shadow: $neuro;
+            background-color: $offWhite;
+
+            border-radius: 14px;
+            overflow: hidden;
+            
+
+            button
+            {
+                font-size: 1.1em;
+                padding: .3em 1em;
+                color: rgb(83, 83, 83);
+
+                background-color: $offWhite;
+                border: none;
+                border-right: solid rgba(161, 161, 161, 0.39) 1px;
+
+                &:hover
+                {
+                    color: white;
+                    background-color: $blue;
+                }
+            }
+
+            .logoutBtn
+            {
+                border-right: none;
+
+                &:hover
+                {
+                    color: white;
+                    background-color: $red;
+                }
+            }
+        }
+
+
+        & > div
+        {
+            width: 100%;
+            margin: 1em auto;
+        }
+
+    }
+
+
+
+
+    .dashboardBlogItem
+    {
+        min-height: 140px;
+        padding: 0;
+        padding-left: 2em;
+        margin: 2em auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+
+        box-shadow: $neuro;
+        background-color: $offWhite;
+
+        border-radius: 14px;
+        overflow: hidden;
+
+        aside
+        {
+            width: 25%;
+            min-width: 121px;
+            height: 100%;
+            min-height: 100%;
+            padding: 0;
+            
+            section
+            {
+                display: flex;
+                align-items: center;
+
+                h2
+                {
+                    margin-left: auto;
+                }
+            
+                img
+                {
+                    margin-left: .3em;
+                    margin-right: 2em;
+                    max-width: 2rem;
+                    width: 2rem;
+                    
+                }
+            }
+
+            & > div
+            {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                
+
+                button
+                {
+                    font-size: 1rem;
+                    padding: .4em 1em;
+                    color: white;
+
+                    border:none;
+                }
+
+                .editBtn
+                {
+                    margin-left: auto;
+                    background-color: $blue;
+                }
+                .deleteBlogBtn
+                {
+                    background-color: $red;
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+
+@media (max-width: 650px)
+{
+    .dashboardCont
+    {
+       flex-direction: column;
+       align-items: center;
+       justify-content: unset;
+
+       .profile
+       {
+           width: 90%;
+       }
+
+       & > main
+       {
+           width: 90%;
+           margin-top: 3em;
+       }
+    }
+}

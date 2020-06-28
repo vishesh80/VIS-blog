@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    padding: 1px;
+    outline: none;
+}
+p
+{
+    line-height: 1.5;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(83, 83, 83);
+    
+    & >div
+    {
+        width: 100%;
+        max-width: 1600px;
+        margin: auto;
+    }
+}
+
+@import './pages/home.scss';
+@import './pages/login.scss';
+@import './pages/contact.scss';
+@import './pages/about.scss';
+@import './pages/displayBlog.scss';
+@import './pages/editProfile.scss';
+@import './pages/form.scss';
+@import './pages/dashboard.scss';
+
+
+/* -----------Loading GIF------------*/
+
+#load
+{
+    display: none;
+}
+
+.noNone
+{
+    display: block !important;
+    margin: auto !important;
+}
